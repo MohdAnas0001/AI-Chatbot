@@ -1,0 +1,13 @@
+# Maven build folder
+target/
+
+# Application properties - contains API key - NEVER push this
+application.properties
+
+# STS/Eclipse specific files
+.classpath
+.project
+.settings/
+
+# System files
+.DS_Store

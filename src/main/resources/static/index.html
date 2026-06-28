@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AI Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="chat-container">
+
+    <!-- Header -->
+    <div class="chat-header">
+        <div class="bot-avatar" id="botAvatar">🎓</div>
+        <div class="header-info">
+            <h1 id="botName">CollegeBot</h1>
+            <p><span class="status-dot"></span><span id="statusText">Online · Ready to help</span></p>
+        </div>
+        <select class="topic-select" id="topicSelect" onchange="changeTopic(this.value)">
+            <option value="college">🎓 College</option>
+            <option value="restaurant">🍽️ Restaurant</option>
+            <option value="product">🛍️ Product</option>
+            <option value="hospital">🏥 Hospital</option>
+        </select>
+        <button class="clear-btn" onclick="clearChat()">Clear</button>
+    </div>
+
+    <!-- Messages -->
+    <div class="messages-area" id="messagesArea">
+
+        <!-- Empty state shown initially -->
+        <div class="empty-state" id="emptyState">
+            <div class="icon">🎓</div>
+            <h2 id="welcomeTitle">Hey there! I'm CollegeBot</h2>
+            <p id="welcomeText">Ask me anything about admissions, courses, fees, hostel, placements, or campus life!</p>
+            <div class="suggestions" id="suggestions">
+                <div class="chip" onclick="sendSuggestion('What courses do you offer?')">What courses do you offer?</div>
+                <div class="chip" onclick="sendSuggestion('What is the fee structure?')">Fee structure?</div>
+                <div class="chip" onclick="sendSuggestion('Tell me about placement cell')">Placement cell?</div>
+                <div class="chip" onclick="sendSuggestion('How to apply for admission?')">How to apply?</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Input -->
+    <div class="input-area">
+        <div class="input-box">
+            <textarea
+                id="messageInput"
+                rows="1"
+                placeholder="Ask me anything..."
+                onkeydown="handleKeyDown(event)"
+                oninput="autoResize(this)"
+            ></textarea>
+            <button class="send-btn" id="sendBtn" onclick="sendMessage()" title="Send">
+                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </div>
+        <p class="input-hint">Press <b>Enter</b> to send · <b>Shift+Enter</b> for new line</p>
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
