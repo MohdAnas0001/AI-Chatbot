@@ -1,13 +1,18 @@
 # Maven build folder
 target/
 
-# Application properties - contains API key - NEVER push this
+# Application properties - contains API key
 application.properties
 
 # STS/Eclipse specific files
 .classpath
 .project
 .settings/
-
-# System files
-.DS_Store
+.mylyn/
+.plugins/
+.lock
+.lock_info
+.log
+version.ini
+.factorypath
+.metadata/
