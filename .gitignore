@@ -1,8 +1,6 @@
 # Maven build folder
 target/
 
-# Application properties - contains API key
-application.properties
 
 # STS/Eclipse specific files
 .classpath
